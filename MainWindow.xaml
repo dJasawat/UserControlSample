@@ -1,0 +1,59 @@
+﻿<Window x:Class="UserControlSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserControlSample"
+        xmlns:viewModels="clr-namespace:UserControlSample.ViewModels"
+        xmlns:views="clr-namespace:UserControlSample.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Canvas Grid.Column="1" Grid.RowSpan="4">
+            <ContentControl Content="{Binding}"/>
+        </Canvas>
+        
+        <Button x:Name="btnLabelButton"  Content="Label Control" Height="NaN" Width="NaN"/>
+        <Button x:Name="btnDatePickerButton" Grid.Row="1" Content="DatePicker Control"  Height="NaN" Click="btnDatePickerButton_Click"/>
+        <Button x:Name="btnComboButton" Grid.Row="2" Content="ComboBox Control"  Height="NaN" Width="NaN" Click="btnComboButton_Click"/>
+        <Button x:Name="btnTextButton" Grid.Row="3" Content="TextBox Controls" Height="NaN" Click="btnTextButton_Click"/>
+
+    </Grid>
+
+    <Window.Resources>
+        <DataTemplate x:Name="comboDT" DataType="{x:Type viewModels:ComboBoxViewModel}">
+            <views:ComboViewControl>
+                
+            </views:ComboViewControl>
+        </DataTemplate>
+        <DataTemplate x:Name="datepickerDT" DataType="{x:Type viewModels:DatePickerViewModel}">
+            <views:DatePickerView>
+                
+            </views:DatePickerView>
+        </DataTemplate>
+
+        <DataTemplate x:Name="textBoxDT" DataType="{x:Type viewModels:TextViewModel}">
+            <views:TextViewControl>
+                
+            </views:TextViewControl>
+        </DataTemplate>
+        <!--<DataTemplate x:Name="labelDT" DataType="{x:Type viewModels:LabelViewModel}">
+            <views:LabelViewControl>
+                
+            </views:LabelViewControl>
+            
+        </DataTemplate>-->
+    </Window.Resources>
+    
+</Window>

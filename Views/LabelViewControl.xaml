@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="UserControlSample.Views.LabelViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UserControlSample.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid RenderTransformOrigin="0.443,0.46">
+        <Canvas>
+            <Label Content="Label" Canvas.Left="329" Canvas.Top="183" RenderTransformOrigin="0.5,0.5" Width="214">
+           
+            </Label>
+
+        </Canvas>
+    </Grid>
+</UserControl>
